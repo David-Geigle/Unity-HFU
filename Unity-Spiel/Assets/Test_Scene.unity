@@ -902,12 +902,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 942364040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3f3fa96bdb0884998ac8486995b922, type: 3}
+  m_Script: {fileID: 11500000, guid: cffe0f9dceba9ac44a590c0bd0989959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 772187632}
-  yOffset: 8
-  zOffset: 9
+  target: {fileID: 772187636}
+  offset: {x: -1.29, y: -2.41, z: 0}
 --- !u!1 &1436312228
 GameObject:
   m_ObjectHideFlags: 0
