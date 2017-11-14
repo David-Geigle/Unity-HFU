@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d778ba46248a3d04cbe2b2200781887a, type: 2}
 --- !u!1 &17395121
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,8 +127,8 @@ GameObject:
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &17395122
 Transform:
@@ -212,7 +212,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &165406698
 MeshRenderer:
@@ -295,8 +295,8 @@ GameObject:
   m_Name: Sphere (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &568664520
 Transform:
@@ -379,8 +379,8 @@ GameObject:
   m_Name: Sphere (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &733479295
 Transform:
@@ -461,6 +461,8 @@ GameObject:
   - component: {fileID: 772187633}
   - component: {fileID: 772187638}
   - component: {fileID: 772187637}
+  - component: {fileID: 772187640}
+  - component: {fileID: 772187639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -545,7 +547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0800a9cd052019448a11d9b7739bd9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5000
 --- !u!54 &772187638
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -554,13 +555,45 @@ Rigidbody:
   m_GameObject: {fileID: 772187632}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &772187639
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772187632}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &772187640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772187632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179500d842dd79141834d68442d4e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &902846781
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,8 +609,8 @@ GameObject:
   m_Name: Sphere (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &902846782
 Transform:
@@ -660,8 +693,8 @@ GameObject:
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &916968426
 Transform:
@@ -744,8 +777,8 @@ GameObject:
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &934717047
 Transform:
@@ -922,8 +955,8 @@ GameObject:
   m_Name: Sphere (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1436312229
 Transform:
@@ -1006,8 +1039,8 @@ GameObject:
   m_Name: Sphere (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1568639690
 Transform:
