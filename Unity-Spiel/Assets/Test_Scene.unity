@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44573534, g: 0.4954449, b: 0.5742635, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7389,6 +7389,8 @@ GameObject:
   - component: {fileID: 772187633}
   - component: {fileID: 772187638}
   - component: {fileID: 772187637}
+  - component: {fileID: 772187640}
+  - component: {fileID: 772187639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7473,7 +7475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0800a9cd052019448a11d9b7739bd9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5000
 --- !u!54 &772187638
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7489,6 +7490,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!195 &772187639
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772187632}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 10
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &772187640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 772187632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179500d842dd79141834d68442d4e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &819532813
 GameObject:
   m_ObjectHideFlags: 0
@@ -10981,12 +11014,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 942364040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3f3fa96bdb0884998ac8486995b922, type: 3}
+  m_Script: {fileID: 11500000, guid: cffe0f9dceba9ac44a590c0bd0989959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 772187632}
-  yOffset: 8
-  zOffset: 9
+  target: {fileID: 772187636}
+  offset: {x: -0, y: -2.31, z: 1.44}
 --- !u!1 &1438403991
 GameObject:
   m_ObjectHideFlags: 0

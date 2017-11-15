@@ -1,39 +1,32 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(PlayerMotion))]
 public class PlayerMovement : MonoBehaviour {
 
     GameObject Player;
-    Rigidbody rb;
-    public float force;
+	PlayerMotion motion;
 
-    void Start () {
-
-        Player = this.gameObject;
-        rb = Player.GetComponent<Rigidbody>();
+	void Start()
+	{
+		motion = GetComponent<PlayerMotion>();
 	}
-	
 
-	void FixedUpdate () {
+	void Update () {
 
-        if (Input.GetKey("w"))
-        {
-            rb.AddForce( 0 , 0 , force * Time.deltaTime, ForceMode.Acceleration);
-        }
+        if (Input.GetMouseButton(0))
+		{
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
 
-        if (Input.GetKey("s"))
-        {
-            rb.AddForce( 0 , 0 , -force * Time.deltaTime, ForceMode.Acceleration);
-        }
 
-        if (Input.GetKey("a"))
-        {
-            rb.AddForce(-force * Time.deltaTime , 0 , 0 , ForceMode.Acceleration);
-        }
+			if(Physics.Raycast(ray, out hit, 100))
+			{
+				motion.MoveToPoint(hit.point);
 
-        if (Input.GetKey("d"))
-        {
-            rb.AddForce(force * Time.deltaTime , 0 , 0  , ForceMode.Acceleration);
-        }
+			}
+
+		}
+        
 
 
 
