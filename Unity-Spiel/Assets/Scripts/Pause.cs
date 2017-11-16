@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour {
 
     GameObject PauseMenu;
-    bool paused;
+	public static bool paused;
     bool isMute;
 
 
@@ -66,6 +66,7 @@ public class Pause : MonoBehaviour {
     }
     public void Quit()
     {
+		Debug.Log("ENDE!");
         Application.Quit();
     }
 

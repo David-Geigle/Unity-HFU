@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menü : MonoBehaviour {
     bool isMute;
@@ -16,7 +15,7 @@ public class Menü : MonoBehaviour {
     }
         public void NewGame()
         {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene(1);
         }
         public void Quit()
         {
@@ -29,7 +28,7 @@ public class Menü : MonoBehaviour {
         }
         public void Load()
         {
-            Application.LoadLevel(PlayerPrefs.GetInt("currentscenesave"));
+           SceneManager.LoadScene(PlayerPrefs.GetInt("currentscenesave"));
         }
     public void Mute()
     {
