@@ -17,5 +17,15 @@ public class PlayerMotion : MonoBehaviour {
 		agent.SetDestination(point);
 		
 	}
+
+	void Update()
+	{
+		if (TurnBackTime.isRewinding)
+			agent.isStopped = true;
+		else
+			agent.isStopped = false;
+
+
+	}
 }
 
