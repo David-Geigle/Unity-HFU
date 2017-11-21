@@ -29,8 +29,14 @@ public class TurnBackTime : MonoBehaviour {
 
 	void Record()
 	{
-		positions.Insert(0, transform.position);
-		rotations.Insert(0, transform.rotation);
+		if (positions.Count > Mathf.Round(5F / Time.fixedDeltaTime))
+		{
+			positions.RemoveAt(positions.Count - 1); //alle Werte die älter als 5Sekunden sind werden gelöscht
+			rotations.RemoveAt(rotations.Count - 1);
+		}
+			positions.Insert(0, transform.position); // neue Werte hinzufügen
+			rotations.Insert(0, transform.rotation);
+		
 
 	}
 
