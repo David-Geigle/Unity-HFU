@@ -8,6 +8,8 @@ public class TurnBackTime : MonoBehaviour {
 
 	public float t = 3F; //Rückspulzeit
 
+	public Canvas canvas;
+
 	
 	List<Vector3> positions;
 	List<Quaternion> rotations;
