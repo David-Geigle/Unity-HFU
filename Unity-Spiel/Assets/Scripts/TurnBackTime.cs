@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TurnBackTime : MonoBehaviour {
 
 	public static bool isRewinding = false;
 
-	public float t = 3F; //Rückspulzeit
+	public float t = 2F; //Rückspulzeit
 
-	public Canvas canvas;
+	public GameObject canvas;
 
 	
 	List<Vector3> positions;
@@ -56,16 +57,21 @@ public class TurnBackTime : MonoBehaviour {
 	void Update ()
 	{
 
-		// Wenn "R" gedrückt wird wird die zeit 3s zurückgespult
-		if (Input.GetKeyDown(KeyCode.R))
-			StartCoroutine( "RewindTime");
-		
+		// Wenn "R" gedrückt wird und die Fäigkeit nicht auf Cooldown ist, wird die zeit 3s zurückgespult
+		if (Input.GetKeyDown(KeyCode.R) && !RewindCooldown.isOnCooldown)
+		{
+			StartCoroutine("RewindTime");
+			RewindCooldown.isOnCooldown = true;
+			RewindCooldown.timeRemaining = RewindCooldown.Cooldown;
+		}
 	}
 
 	IEnumerator RewindTime()
 	{
 		isRewinding = true;
+		canvas.SetActive(true);
 		yield return new WaitForSeconds(t);
 		isRewinding = false;
+		canvas.SetActive(false);
 	}
 }
