@@ -8,15 +8,34 @@ public class PlayerMovement : MonoBehaviour
 	GameObject Player;
 	PlayerMotion motion;
 	public GameObject XMarker;
+    public Texture2D lebensrahmen;
+    public Texture2D lebengruen;
+    private int leben;
+    private int groesseLebensanzeige;
+    Vector3 point;
 
-	Vector3 point;
+  
 
-	void Start()
+    void Start()
 	{
 		motion = GetComponent<PlayerMotion>();
-	}
+        leben = 10;
+        groesseLebensanzeige = 5;
+    
+    }
 
-	void Update()
+    private void OnGUI()
+    {
+        GUI.DrawTexture(new Rect(10,10,792/ groesseLebensanzeige, 335/ groesseLebensanzeige),lebensrahmen);
+        for (int i = 0; i < leben; i++)
+        {
+            GUI.DrawTexture(new Rect(18.7f+(73/ groesseLebensanzeige)* i, 10, 73/groesseLebensanzeige, 335/ groesseLebensanzeige), lebengruen);
+        }
+
+
+    }
+
+    void Update()
 	{
 		//Raycasten
 		if (Input.GetMouseButton(0) && !Pause.paused)
