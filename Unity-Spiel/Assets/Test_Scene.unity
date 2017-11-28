@@ -16218,6 +16218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772187636}
   - component: {fileID: 772187635}
+  - component: {fileID: 772187642}
   - component: {fileID: 772187634}
   - component: {fileID: 772187633}
   - component: {fileID: 772187638}
@@ -16225,7 +16226,6 @@ GameObject:
   - component: {fileID: 772187640}
   - component: {fileID: 772187639}
   - component: {fileID: 772187641}
-  - component: {fileID: 772187642}
   - component: {fileID: 772187643}
   m_Layer: 0
   m_Name: Player
@@ -16394,9 +16394,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 772187632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e16185925709754abe1eac761ddc26a, type: 3}
+  m_Script: {fileID: 11500000, guid: ce441c762cfba7c46aa9957271b243ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  t: 10
 --- !u!1 &789370536
 GameObject:
   m_ObjectHideFlags: 0
