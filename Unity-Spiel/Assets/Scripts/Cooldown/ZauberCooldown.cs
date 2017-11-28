@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PfeilCooldown : MonoBehaviour
+public class ZauberCooldown : MonoBehaviour
 {
 
 	public static bool isOnCooldown; //globale variable für Cooldown(CD)
@@ -38,7 +38,7 @@ public class PfeilCooldown : MonoBehaviour
 		}
 		contend.fillAmount = 1 - (timeRemaining / Cooldown); //die Anzeige wird gefüllt
 		if (!isOnCooldown)
-			contend.color = Color.green;//wen die Fägigkeit aktivierbar ist wird die anzeige Grün
+			contend.color = Color.green;//wenn die Fägigkeit aktivierbar ist wird die anzeige Grün
 	}
 
 

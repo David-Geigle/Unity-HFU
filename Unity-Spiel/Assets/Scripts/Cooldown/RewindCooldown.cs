@@ -36,7 +36,7 @@ public class RewindCooldown : MonoBehaviour {
 		}
 		contend.fillAmount = 1-(timeRemaining / Cooldown); //die Anzeige wird gefüllt
 		if (!isOnCooldown)
-			contend.color = Color.green;//wen die Fägigkeit aktivierbar ist wird die anzeige Grün
+			contend.color = Color.green;//wenn die Fägigkeit aktivierbar ist wird die anzeige Grün
 	}
 	
        
