@@ -4,16 +4,24 @@ using UnityEngine.SceneManagement;
 
 public class Menü : MonoBehaviour {
     bool isMute;
+    public Canvas MainCanvas;
+    public Canvas CreditsCanvas;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-
-    // Update is called once per frame
-    void Update() {
+    private void Awake()
+    {
+        CreditsCanvas.enabled = false;
     }
-        public void NewGame()
+    public void CreditsOn()
+    {
+        CreditsCanvas.enabled = true;
+        MainCanvas.enabled = false;
+    }
+    public void ReturnOn()
+    {
+        CreditsCanvas.enabled = false;
+        MainCanvas.enabled = true;
+    }
+    public void NewGame()
         {
             SceneManager.LoadScene(1);
         }
