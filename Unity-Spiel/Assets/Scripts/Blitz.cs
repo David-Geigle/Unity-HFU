@@ -7,7 +7,8 @@ public class Blitz : MonoBehaviour
 
 	BoxCollider box;
 
-	public float t = 10;
+	public float t = 2;
+	public float Damage;
 
 	void Start()
 	{
@@ -23,7 +24,7 @@ public class Blitz : MonoBehaviour
 			ZauberCooldown.isOnCooldown = true;
 			ZauberCooldown.timeRemaining = ZauberCooldown.Cooldown;
 			box.enabled = true;
-			StartCoroutine("BlitzCast()");
+			StartCoroutine("BlitzCast");
 		}
 	}
 
@@ -40,8 +41,8 @@ public class Blitz : MonoBehaviour
 		Debug.Log("Hit");
 		if (other.tag == "Enemy" ) // wenn das getroffene Objekt den Tag Enemy hat
 		{
-			Debug.Log("HitEnemy");
-
+			Debug.Log(other.name +" hat " + Damage + " Schaden erhalten.");
+			//GameObject.Find(other.name).GetComponent<>().TakeDamage(Damage);
 		}
 	}
 
