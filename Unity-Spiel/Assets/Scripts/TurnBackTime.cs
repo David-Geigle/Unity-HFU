@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class TurnBackTime : MonoBehaviour {
 
@@ -51,6 +52,7 @@ public class TurnBackTime : MonoBehaviour {
 			positions.RemoveAt(0);
 			transform.rotation = rotations[0];
 			rotations.RemoveAt(0);
+			gameObject.GetComponent<NavMeshAgent>().ResetPath();
 		}
 	}
 

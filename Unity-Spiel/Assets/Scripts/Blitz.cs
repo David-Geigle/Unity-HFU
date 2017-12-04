@@ -42,7 +42,7 @@ public class Blitz : MonoBehaviour
 		if (other.tag == "Enemy" ) // wenn das getroffene Objekt den Tag Enemy hat
 		{
 			Debug.Log(other.name +" hat " + Damage + " Schaden erhalten.");
-			//GameObject.Find(other.name).GetComponent<>().TakeDamage(Damage);
+			GameObject.Find(other.name).GetComponent<HealthHandeler>().TakeDamage(Damage);
 		}
 	}
 
