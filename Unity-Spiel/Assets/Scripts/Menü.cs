@@ -5,27 +5,31 @@ using UnityEngine.SceneManagement;
 public class Menü : MonoBehaviour {
     bool isMute;
     public Canvas MainCanvas;
-    public Canvas CreditsCanvas;
+    public GameObject CreditsCanvas;
 
     private void Awake()
     {
-        CreditsCanvas.enabled = false;
+        CreditsCanvas.SetActive(false);
     }
     public void CreditsOn()
     {
-        CreditsCanvas.enabled = true;
+        CreditsCanvas.SetActive(true);
         MainCanvas.enabled = false;
     }
     public void ReturnOn()
     {
-        CreditsCanvas.enabled = false;
+        CreditsCanvas.SetActive(false);
         MainCanvas.enabled = true;
     }
     public void NewGame()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
-        public void Quit()
+    public void NewGameStart()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void Quit()
         {
             Application.Quit();
         }
