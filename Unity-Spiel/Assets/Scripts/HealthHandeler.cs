@@ -25,6 +25,7 @@ public class HealthHandeler : MonoBehaviour {
 	public void TakeDamage(float damage)
 	{
 		currentHealth = currentHealth - damage;
-
+		if (currentHealth > Health)
+			currentHealth = Health;
 	}
 }
