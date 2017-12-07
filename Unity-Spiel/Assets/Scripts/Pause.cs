@@ -9,16 +9,14 @@ public class Pause : MonoBehaviour {
     GameObject PauseMenu;
 	public static bool paused;
     bool isMute;
-    public GameSave MyGameSave;
 
 
 	void Start () {
         paused = false;
         PauseMenu = GameObject.Find("PauseMenu");
-        MyGameSave = GameObject.Find("GameSave").GetComponent<GameSave>();
 
-
-    }
+		
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -52,15 +50,13 @@ public class Pause : MonoBehaviour {
 
     public void Save()
     {
-        //PlayerPrefs.SetInt("currentscenesave", Application.loadedLevel);
-        MyGameSave.savePos();
+        PlayerPrefs.SetInt("currentscenesave", Application.loadedLevel);
 
     }
 
     public void Load()
     {
-        //SceneManager.LoadScene(PlayerPrefs.GetInt("currentscenesave"));
-        MyGameSave.loadPos();
+		SceneManager.LoadScene(PlayerPrefs.GetInt("currentscenesave"));
     }
 
     public void Mute()

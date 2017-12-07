@@ -10,21 +10,14 @@ public class Blitz : MonoBehaviour
 	public float t = 2;
 	public float Damage;
 
-    public Texture2D BlitzNormal;
-
-    void Start()
+	void Start()
 	{
 		box = gameObject.GetComponent<BoxCollider>();
 		box.enabled = false;
 	}
 
-    private void OnGUI()
-    {
-        GUI.DrawTexture(new Rect(200, 400, 100, 100), BlitzNormal);
-    }
 
-
-    void Update()
+	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Q) && !ZauberCooldown.isOnCooldown)
 		{
