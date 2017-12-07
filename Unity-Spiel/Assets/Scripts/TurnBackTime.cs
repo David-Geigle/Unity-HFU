@@ -16,14 +16,21 @@ public class TurnBackTime : MonoBehaviour {
 	List<Vector3> positions;
 	List<Quaternion> rotations;
 
-	void Start ()
+    public Texture2D ZeitNormal;
+
+    void Start ()
 	{
 		positions = new List<Vector3>();
 		rotations = new List<Quaternion>();
 	}
 
+    private void OnGUI()
+    {
+        GUI.DrawTexture(new Rect(50, 400, 100, 100), ZeitNormal);
+    }
 
-	void FixedUpdate()
+
+        void FixedUpdate()
 	{
 		if (isRewinding)
 			Rewind();
