@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3ac1721b6871b1e43a52fb270d267379
-timeCreated: 1512405420
+timeCreated: 1513010344
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -143,7 +143,7 @@ ModelImporter:
     400134: Spine2
     4300000: Goblin
     4300002: Gobiln_eyes
-    7400000: mixamo.com
+    7400000: Goblin_Dying
     9500000: //RootNode
     13700000: Gobiln_eyes
     13700002: Goblin
@@ -183,7 +183,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Goblin_Dying
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 111
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

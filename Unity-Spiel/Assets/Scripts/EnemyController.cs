@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour {
 
     public float lookRadius = 10F;
     public Quaternion lookRotation;
+    static Animator anim;
 
     Transform target;
     NavMeshAgent agent;
@@ -16,6 +17,7 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +40,8 @@ public class EnemyController : MonoBehaviour {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5F);
+
+
     }
 
     private void OnDrawGizmosSelected()
