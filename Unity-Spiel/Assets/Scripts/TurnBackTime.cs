@@ -24,10 +24,10 @@ public class TurnBackTime : MonoBehaviour {
 		rotations = new List<Quaternion>();
 	}
 
-    private void OnGUI()
+  /*  private void OnGUI()
     {
         GUI.DrawTexture(new Rect(50, 400, 100, 100), ZeitNormal);
-    }
+    }*/
 
 
         void FixedUpdate()

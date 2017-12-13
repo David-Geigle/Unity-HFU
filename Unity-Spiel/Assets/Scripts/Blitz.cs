@@ -18,10 +18,10 @@ public class Blitz : MonoBehaviour
 		box.enabled = false;
 	}
 
-    private void OnGUI()
+  /*  private void OnGUI()
     {
         GUI.DrawTexture(new Rect(200, 400, 100, 100), BlitzNormal);
-    }
+    }*/
 
 
     void Update()
