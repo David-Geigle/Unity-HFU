@@ -50,6 +50,11 @@ public class Pause : MonoBehaviour {
 		SceneManager.LoadScene(0);
     }
 
+    public void GameOver()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void Save()
     {
         //PlayerPrefs.SetInt("currentscenesave", Application.loadedLevel);
