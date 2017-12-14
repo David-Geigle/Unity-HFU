@@ -14,6 +14,8 @@ public class Blitz : MonoBehaviour
 
     public Texture2D BlitzNormal;
 
+	Animator anim;
+
     void Start()
 	{
 		box = gameObject.GetComponent<BoxCollider>();
@@ -21,6 +23,8 @@ public class Blitz : MonoBehaviour
 
 		Sys = gameObject.GetComponent<ParticleSystem>();
 		Sys.Stop();
+
+		anim = gameObject.GetComponentInParent<Animator>();
 	}
 
   /*  private void OnGUI()
@@ -36,6 +40,10 @@ public class Blitz : MonoBehaviour
 			ZauberCooldown.isOnCooldown = true;
 			ZauberCooldown.timeRemaining = ZauberCooldown.Cooldown;
 			box.enabled = true;
+
+			anim.SetBool("isIdle",false);
+			anim.SetBool("isAttacking", true);
+
 			Sys.Play();
 			StartCoroutine("BlitzCast");
 		}
@@ -46,6 +54,9 @@ public class Blitz : MonoBehaviour
 		yield return new WaitForSeconds(t);
 		box.enabled = false;
 		Sys.Stop();
+		anim.SetBool("isAttacking", false);
+		anim.SetBool("isIdle", true);
+		
 	}
 
 

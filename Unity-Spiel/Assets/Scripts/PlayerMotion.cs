@@ -5,10 +5,12 @@ using UnityEngine.AI;
 public class PlayerMotion : MonoBehaviour {
 
 	NavMeshAgent agent;
+	Animator anim;
 	
 	void Start ()
 	{
 		agent = GetComponent<NavMeshAgent>();
+		anim = GetComponent<Animator>();
 	}
 
 
@@ -25,7 +27,17 @@ public class PlayerMotion : MonoBehaviour {
 		else
 			agent.isStopped = false;
 
+		if (agent.hasPath == true)
+		{
+			anim.SetBool("isWalking", true);
+			anim.SetBool("isIdle", false);
+		}
 
+		else
+		{
+			anim.SetBool("isWalking", false);
+			anim.SetBool("isIdle", true);
+		}
 	}
 }
 

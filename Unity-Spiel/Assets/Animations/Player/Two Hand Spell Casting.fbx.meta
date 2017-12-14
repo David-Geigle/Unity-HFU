@@ -235,7 +235,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Player_Cast
       takeName: mixamo.com
-      firstFrame: 0
+      firstFrame: 31
       lastFrame: 103
       wrapMode: 0
       orientationOffsetY: 0
