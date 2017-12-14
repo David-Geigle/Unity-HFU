@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Marker
   - Enemy
+  - Handy
   layers:
   - Default
   - TransparentFX

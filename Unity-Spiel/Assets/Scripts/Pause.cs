@@ -50,9 +50,14 @@ public class Pause : MonoBehaviour {
 		SceneManager.LoadScene(0);
     }
 
-    public void GameOver()
+    public static void GameOver()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public static void Gewonnen()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void Save()
