@@ -59,7 +59,7 @@ public class TurnBackTime : MonoBehaviour {
 			positions.RemoveAt(0);
 			transform.rotation = rotations[0];
 			rotations.RemoveAt(0);
-			gameObject.GetComponent<NavMeshAgent>().ResetPath();
+			//gameObject.GetComponent<NavMeshAgent>().ResetPath();
 		}
 	}
 
@@ -79,8 +79,10 @@ public class TurnBackTime : MonoBehaviour {
 	{
 		isRewinding = true;
 		canvas.SetActive(true);
+		Time.timeScale = 0F;
 		GameObject.Find("Player").GetComponent<HealthHandeler>().TakeDamage(-20F);
 		yield return new WaitForSeconds(t);
+		Time.timeScale = 1F;
 		isRewinding = false;
 		canvas.SetActive(false);
 	}
