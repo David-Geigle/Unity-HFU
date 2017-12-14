@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Chase : MonoBehaviour {
 
-    public Transform player;
-    private Animator anim;
+	Transform player;
+	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+		player = GameObject.Find("Player").transform;
 	}
 	
 	// Update is called once per frame

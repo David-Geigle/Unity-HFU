@@ -7,6 +7,8 @@ public class Blitz : MonoBehaviour
 
 	BoxCollider box;
 
+	ParticleSystem Sys;
+
 	public float t = 2;
 	public float Damage;
 
@@ -16,6 +18,9 @@ public class Blitz : MonoBehaviour
 	{
 		box = gameObject.GetComponent<BoxCollider>();
 		box.enabled = false;
+
+		Sys = gameObject.GetComponent<ParticleSystem>();
+		Sys.Stop();
 	}
 
   /*  private void OnGUI()
@@ -31,6 +36,7 @@ public class Blitz : MonoBehaviour
 			ZauberCooldown.isOnCooldown = true;
 			ZauberCooldown.timeRemaining = ZauberCooldown.Cooldown;
 			box.enabled = true;
+			Sys.Play();
 			StartCoroutine("BlitzCast");
 		}
 	}
@@ -39,6 +45,7 @@ public class Blitz : MonoBehaviour
 	{
 		yield return new WaitForSeconds(t);
 		box.enabled = false;
+		Sys.Stop();
 	}
 
 

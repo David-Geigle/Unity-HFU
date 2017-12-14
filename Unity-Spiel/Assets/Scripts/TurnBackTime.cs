@@ -10,7 +10,8 @@ public class TurnBackTime : MonoBehaviour {
 
 	public float t = 2F; //Rückspulzeit
 
-	public GameObject canvas;
+	public GameObject Canvas;
+	Canvas canvas;
 
 	
 	List<Vector3> positions;
@@ -22,6 +23,9 @@ public class TurnBackTime : MonoBehaviour {
 	{
 		positions = new List<Vector3>();
 		rotations = new List<Quaternion>();
+		Canvas = GameObject.Find("RewindCanvas");
+		canvas = Canvas.GetComponentInChildren<Canvas>();
+		canvas.enabled = false;
 	}
 
   /*  private void OnGUI()
@@ -78,12 +82,12 @@ public class TurnBackTime : MonoBehaviour {
 	IEnumerator RewindTime()
 	{
 		isRewinding = true;
-		canvas.SetActive(true);
+		canvas.enabled = true;
 		Time.timeScale = 0F;
 		GameObject.Find("Player").GetComponent<HealthHandeler>().TakeDamage(-20F);
 		yield return new WaitForSeconds(t);
 		Time.timeScale = 1F;
 		isRewinding = false;
-		canvas.SetActive(false);
+		canvas.enabled = false;
 	}
 }
