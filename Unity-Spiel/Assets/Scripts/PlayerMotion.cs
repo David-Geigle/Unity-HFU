@@ -27,16 +27,24 @@ public class PlayerMotion : MonoBehaviour {
 		else
 			agent.isStopped = false;
 
-		if (agent.hasPath == true)
+		if (agent.hasPath == true && Blitz.isCasting == false)
 		{
 			anim.SetBool("isWalking", true);
 			anim.SetBool("isIdle", false);
+		}
+
+		else if (Blitz.isCasting == true)
+		{
+			anim.SetBool("isIdle", false);
+			anim.SetBool("isAttacking", true);
+			anim.SetBool("isWalking", false);
 		}
 
 		else
 		{
 			anim.SetBool("isWalking", false);
 			anim.SetBool("isIdle", true);
+			anim.SetBool("isAttacking", false);
 		}
 	}
 }

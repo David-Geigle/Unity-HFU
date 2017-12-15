@@ -14,7 +14,9 @@ public class Blitz : MonoBehaviour
 
     public Texture2D BlitzNormal;
 
-	Animator anim;
+	AudioSource AudioSource;
+
+	public static bool isCasting = false;
 
     void Start()
 	{
@@ -24,7 +26,7 @@ public class Blitz : MonoBehaviour
 		Sys = gameObject.GetComponent<ParticleSystem>();
 		Sys.Stop();
 
-		anim = gameObject.GetComponentInParent<Animator>();
+		AudioSource = gameObject.GetComponent<AudioSource>();
 	}
 
   /*  private void OnGUI()
@@ -41,10 +43,12 @@ public class Blitz : MonoBehaviour
 			ZauberCooldown.timeRemaining = ZauberCooldown.Cooldown;
 			box.enabled = true;
 
-			anim.SetBool("isIdle",false);
-			anim.SetBool("isAttacking", true);
-
 			Sys.Play();
+
+			AudioSource.Play();
+
+			isCasting = true;
+
 			StartCoroutine("BlitzCast");
 		}
 	}
@@ -54,8 +58,7 @@ public class Blitz : MonoBehaviour
 		yield return new WaitForSeconds(t);
 		box.enabled = false;
 		Sys.Stop();
-		anim.SetBool("isAttacking", false);
-		anim.SetBool("isIdle", true);
+		isCasting = false;
 		
 	}
 

@@ -19,6 +19,8 @@ public class TurnBackTime : MonoBehaviour {
 
     public Texture2D ZeitNormal;
 
+	AudioSource AudioSource;
+
     void Start ()
 	{
 		positions = new List<Vector3>();
@@ -26,6 +28,7 @@ public class TurnBackTime : MonoBehaviour {
 		Canvas = GameObject.Find("RewindCanvas");
 		canvas = Canvas.GetComponentInChildren<Canvas>();
 		canvas.enabled = false;
+		AudioSource = Camera.main.GetComponent<AudioSource>();
 	}
 
   /*  private void OnGUI()
@@ -76,6 +79,7 @@ public class TurnBackTime : MonoBehaviour {
 			StartCoroutine("RewindTime");
 			RewindCooldown.isOnCooldown = true;
 			RewindCooldown.timeRemaining = RewindCooldown.Cooldown;
+			AudioSource.Play();
 		}
 	}
 
