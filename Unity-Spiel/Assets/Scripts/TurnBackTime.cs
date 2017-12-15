@@ -88,7 +88,7 @@ public class TurnBackTime : MonoBehaviour {
 		isRewinding = true;
 		canvas.enabled = true;
 		Time.timeScale = 0F;
-		GameObject.Find("Player").GetComponent<HealthHandeler>().TakeDamage(-20F);
+		GameObject.Find("Player").GetComponent<Leben>().TakeDamage(-5);
 		yield return new WaitForSeconds(t);
 		Time.timeScale = 1F;
 		isRewinding = false;

@@ -5,24 +5,12 @@ using UnityEngine.UI;
 
 public class DetectHit : MonoBehaviour {
 
-     void OnTriggerEnter(Collider other)
-    {
-
-         Debug.Log("Hit");
-    }
-
-
-
-
-
-
-	// Use this for initialization
-	void Start () {
-		
+	void OnTriggerEnter(Collider other)
+	{
+		GameObject.Find("Player").GetComponent<Leben>().TakeDamage(2);
+		Debug.Log("Hit");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    
+
+
 }
