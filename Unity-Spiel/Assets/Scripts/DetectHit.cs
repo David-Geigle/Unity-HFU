@@ -9,32 +9,20 @@ public class DetectHit : MonoBehaviour {
     private Animator anim;
 
 
-    /*    void OnTriggerEnter(Collider other)
+       void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Enemy")
+            if (other.gameObject.tag == "EnemyAttack")
             {
                 GameObject.Find("Player").GetComponent<Leben>().TakeDamage(2);
                 Debug.Log("Hit");
             }
-        }*/
+        }
 
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-
-
-    private void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.tag == "Enemy" )
-        {
-            GameObject.Find("Player").GetComponent<Leben>().TakeDamage(2);
-            Debug.Log("Hit");
-
-        }
-
-    }
 
 
 

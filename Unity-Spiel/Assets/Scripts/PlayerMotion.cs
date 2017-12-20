@@ -38,6 +38,7 @@ public class PlayerMotion : MonoBehaviour {
 			anim.SetBool("isIdle", false);
 			anim.SetBool("isAttacking", true);
 			anim.SetBool("isWalking", false);
+			agent.ResetPath();
 		}
 
 		else
