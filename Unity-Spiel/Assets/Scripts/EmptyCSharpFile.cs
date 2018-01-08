@@ -1,10 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
 
 public class EmptyCSharpFile : MonoBehaviour {
-	public Transform spawnPoint;
+	public GameObject spawnPoint;
+	public NavMeshAgent agent;
+
+	void Start()
+	{
+		agent = GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>();
+	}
 
 	void OnTriggerEnter(Collider other) {
-		other.gameObject.transform.position = spawnPoint.position;
+		if (other.tag == "Player")
+		{
+			agent.Warp(spawnPoint.transform.position);
+		}
 	}
 }
