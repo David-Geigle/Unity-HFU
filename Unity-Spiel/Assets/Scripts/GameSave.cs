@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 
 public class GameSave : MonoBehaviour
 {
 
     public Transform ObjectToSave;
-
+	NavMeshAgent agent;
     // Use this for initialization
 
 
@@ -16,10 +17,17 @@ public class GameSave : MonoBehaviour
         {
             ObjectToSave = gameObject.transform;
         }
-    }
+		
+
+	}
+
+	void Start()
+	{
+		agent = GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>();
+	}
 
 
-    public void loadPos()
+	public void loadPos()
     {
         Debug.Log("Laden");
         Debug.Log(ObjectToSave.position.x);
@@ -40,6 +48,7 @@ public class GameSave : MonoBehaviour
 
 
             Pause.paused = false;
+			agent.ResetPath();
         }
 
     }
