@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 42ef2d548a4ee914ab716eb456ce3942
-timeCreated: 1516055361
+timeCreated: 1516060255
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -325,7 +325,7 @@ ModelImporter:
       name: Player_Walking
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 31
+      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
