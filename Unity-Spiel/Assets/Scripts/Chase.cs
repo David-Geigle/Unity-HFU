@@ -17,7 +17,7 @@ public class Chase : MonoBehaviour {
 	void Update ()
     {
 	
-        if(Vector3.Distance(player.position, this.transform.position) < 10)
+        if(Vector3.Distance(player.position, this.transform.position) < 20)
         {
             Vector3 direction = player.position - this.transform.position;
             direction.y = 0;
